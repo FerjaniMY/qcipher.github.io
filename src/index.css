@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,7 +67,7 @@
   }
   
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-quantum-accent via-yellow-300 to-quantum-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-quantum-accent via-yellow-300 to-quantum-accent bg-clip-text text-transparent animate-gradient-shift;
   }
   
   .text-gradient-purple {
@@ -87,5 +88,37 @@
 
   .hero-gradient {
     background: radial-gradient(circle at 50% 50%, rgba(155, 135, 245, 0.15) 0%, rgba(19, 19, 19, 0) 50%);
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% auto;
   }
 }
