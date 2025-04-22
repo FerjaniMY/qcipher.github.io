@@ -1,27 +1,42 @@
 
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Shield, Lock, Database } from 'lucide-react';
+import { ChevronRight, Shield, Brain, Database } from 'lucide-react';
 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen py-24 md:py-32 overflow-hidden">
-      {/* Animated background effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-quantum-highlight/20 via-transparent to-transparent"></div>
+      {/* Neural network background effect */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-grid opacity-20 animate-[pulse_4s_ease-in-out_infinite]"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%20fill%3D%22rgba(255%2C255%2C255%2C0.1)%22%2F%3E%3C%2Fsvg%3E')] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] opacity-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-quantum-highlight/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-grid opacity-20"></div>
+        <div className="noise-bg"></div>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(3)].map((_, i) => (
+          <div 
+            key={i}
+            className={`absolute w-32 h-32 bg-quantum-accent/5 backdrop-blur-3xl rounded-full 
+              ${i === 0 ? 'top-1/4 left-1/4 animate-[float_8s_ease-in-out_infinite]' : 
+                i === 1 ? 'top-1/2 right-1/4 animate-[float_12s_ease-in-out_infinite_0.5s]' : 
+                'bottom-1/4 left-1/2 animate-[float_10s_ease-in-out_infinite_1s]'}`
+            }
+          />
+        ))}
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-gradient-gold">Quantum-Safe</span> Future <br />Powered by AI
+              <span className="text-gradient-gold">AI-Powered</span> Defense <br />
+              Against <span className="text-gradient-purple">Quantum Threats</span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Revolutionizing Post-Quantum Cryptography (PQC) migration with autonomous AI agents 
-              that replicate the expertise of cybersecurity engineers.
+              Our autonomous AI agents replicate cybersecurity expertise to protect 
+              your systems against quantum computing threats.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -34,23 +49,23 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Feature highlights with hover animations */}
+          {/* Feature highlights with animated icons */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             {[
               {
-                icon: <Shield className="h-10 w-10 text-quantum-accent" />,
-                title: "Quantum-Safe Security",
-                description: "Future-proof your systems against quantum computing threats"
+                icon: <Brain className="h-10 w-10 text-quantum-accent" />,
+                title: "AI Agents",
+                description: "Autonomous systems that replicate cybersecurity expertise"
               },
               {
-                icon: <Lock className="h-10 w-10 text-quantum-accent" />,
-                title: "AI-Driven Migration",
-                description: "Automate and accelerate your transition to quantum-safe systems"
+                icon: <Shield className="h-10 w-10 text-quantum-accent" />,
+                title: "Quantum-Safe Security",
+                description: "Protection against emerging quantum computing threats"
               },
               {
                 icon: <Database className="h-10 w-10 text-quantum-accent" />,
-                title: "Reduced Complexity",
-                description: "Minimize cost and human effort in securing digital communications"
+                title: "Automated Migration",
+                description: "Seamless transition to post-quantum cryptography"
               }
             ].map((feature, index) => (
               <div 
