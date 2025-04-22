@@ -1,37 +1,26 @@
-
-import { Shield, Lock, Key, Server, Database, Rocket } from 'lucide-react';
+import { Shield, FileSearch, Lock, Server, Database, Brain } from 'lucide-react';
 
 const Features = () => {
   const featuresList = [
     {
+      icon: <FileSearch className="h-10 w-10 text-quantum-accent" />,
+      title: "Comprehensive Vulnerability Assessment",
+      description: "In-depth evaluation of legacy systems to detect cryptographic weaknesses susceptible to quantum attacks."
+    },
+    {
       icon: <Shield className="h-10 w-10 text-quantum-accent" />,
-      title: "Quantum Threat Assessment",
-      description: "Identify vulnerabilities in your current cryptographic systems that could be exploited by quantum computers."
+      title: "Quantum Penetration Testing",
+      description: "Advanced simulation techniques to identify vulnerabilities using quantum-enabled attack scenarios."
     },
     {
       icon: <Lock className="h-10 w-10 text-quantum-accent" />,
-      title: "AI-Driven Migration",
-      description: "Our autonomous AI agents handle the complex transition to quantum-safe cryptography with minimal human intervention."
-    },
-    {
-      icon: <Key className="h-10 w-10 text-quantum-accent" />,
-      title: "Post-Quantum Algorithms",
-      description: "Implement NIST-approved post-quantum cryptographic algorithms to secure your systems against quantum attacks."
-    },
-    {
-      icon: <Server className="h-10 w-10 text-quantum-accent" />,
-      title: "Seamless Integration",
-      description: "Integrate quantum-safe protocols with your existing infrastructure without disrupting your operations."
+      title: "Cryptographic Inventory (CBOM)",
+      description: "Complete discovery and mapping of all cryptographic assets within your organization's infrastructure."
     },
     {
       icon: <Database className="h-10 w-10 text-quantum-accent" />,
-      title: "Continuous Monitoring",
-      description: "Our systems continuously monitor your cryptographic health and adapt to emerging quantum threats."
-    },
-    {
-      icon: <Rocket className="h-10 w-10 text-quantum-accent" />,
-      title: "Future-Proof Security",
-      description: "Stay ahead of the quantum revolution with regular updates and advancements in post-quantum cryptography."
+      title: "Quantum Risk Scoring",
+      description: "Sophisticated risk modeling to quantify and prioritize potential quantum threats for each asset."
     }
   ];
 
@@ -43,14 +32,14 @@ const Features = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Advanced <span className="text-gradient-purple">Features</span> for Quantum Security
+            PQC Migration <span className="text-gradient-gold">Assessment</span>
           </h2>
           <p className="text-white/80">
-            Our comprehensive suite of tools and technologies ensures your systems are protected against the quantum threat landscape.
+            Our first-step assessment tool provides comprehensive analysis and risk evaluation to prepare your systems for post-quantum cryptography migration.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featuresList.map((feature, index) => (
             <div 
               key={index} 
